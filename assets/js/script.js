@@ -30,8 +30,8 @@ function displayWeatherNow() {
     currentHeader.appendChild(date);
 
     // create <div> for "current weather" info
-    var info = document.createElement('div');
-    info.className = "current-info mt-4";
+    var currentInfo = document.createElement('div');
+    currentInfo.className = "current-info mt-4";
 
     // create <p> for temp
     var temp = document.createElement('p');
@@ -60,6 +60,8 @@ function displayWeatherNow() {
     currentInfo.appendChild(uv);
 
     // add header and info to current weather div
+    currentWeather.appendChild(currentHeader);
+    currentWeather.appendChild(currentInfo);
 
     // run five day forcast
     displayFiveDay();
@@ -67,8 +69,21 @@ function displayWeatherNow() {
 
 function displayWeatherLater() {
     // display section
+    fiveDay.style.display = "block";
 
     // DAY 1
+    // new date
+    var dateOne = document.querySelector(".b1-date");
+    dateOne.textContent = moment().add(1, "d").format("ddd M/DD");
+    // temp
+    var tempOne = document.querySelector(".b1-temp");
+    tempOne.textContent = "Temp:  " + "XX" + "°F";
+    // wind
+    var windOne = document.querySelector(".b1-wind");
+    windOne.textContent = "Wind:  " + "XX.X" + " MPH";
+    // humidity
+    var humidityOne = document.querySelector(".b1-humid");
+    humidityOne.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 2
 

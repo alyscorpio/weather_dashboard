@@ -30,8 +30,11 @@ function displayWeatherNow() {
     currentHeader.appendChild(date);
 
     // create <div> for "current weather" info
+    var info = document.createElement('div');
+    info.className = "current-info mt-4";
 
     // create <p> for temp
+    
     
     // create <p> for wind
 

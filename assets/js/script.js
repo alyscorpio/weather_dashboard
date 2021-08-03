@@ -34,7 +34,9 @@ function displayWeatherNow() {
     info.className = "current-info mt-4";
 
     // create <p> for temp
-    
+    var temp = document.createElement('p');
+    temp.className = "temp";
+    temp.textContent = "Temp: " + "XX" + "°F"
     
     // create <p> for wind
 

@@ -86,6 +86,18 @@ function displayWeatherLater() {
     humidityOne.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 2
+    // new date
+    var dateTwo = document.querySelector(".b2-date");
+    dateTwo.textContent = moment().add(1, "d").format("ddd M/DD");
+    // temp
+    var tempTwo = document.querySelector(".b2-temp");
+    tempTwo.textContent = "Temp:  " + "XX" + "°F";
+    // wind
+    var windTwo = document.querySelector(".b2-wind");
+    windTwo.textContent = "Wind:  " + "XX.X" + " MPH";
+    // humidity
+    var humidityTwo = document.querySelector(".b2-humid");
+    humidityTwo.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 3
 

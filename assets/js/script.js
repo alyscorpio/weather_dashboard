@@ -9,10 +9,14 @@ var searchBtn = document.querySelector('#search-btn');
 
 function displayWeatherNow() {
     // display section
+    currentWeather.style.display = 'block';
 
     // create <div> for "current weather" header
+    var currentHeader = document.createElement('div');
+    currentHeader.className = 'current-header';
 
     // create <h1> for city name
+    
 
     // create <h4> for date
 

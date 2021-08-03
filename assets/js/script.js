@@ -21,6 +21,9 @@ function displayWeatherNow() {
     city.textContent = "Example City";
 
     // create <h4> for date
+    var date = document.createElement('h5');
+    date.className = "current-date mt-2";
+    date.textContent = "today";
 
     // add elements to header div
 

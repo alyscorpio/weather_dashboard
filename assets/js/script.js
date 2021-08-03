@@ -13,10 +13,12 @@ function displayWeatherNow() {
 
     // create <div> for "current weather" header
     var currentHeader = document.createElement('div');
-    currentHeader.className = 'current-header';
+    currentHeader.className = "current-header";
 
     // create <h1> for city name
-    
+    var city = document.createElement('h1');
+    city.className = "current-city display-6";
+    city.textContent = "Example City";
 
     // create <h4> for date
 

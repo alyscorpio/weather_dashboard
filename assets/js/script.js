@@ -8,7 +8,32 @@ var fiveDay = document.querySelector("#five-day-forcast");
 var searchBtn = document.querySelector('#search-btn');
 
 function displayWeatherNow() {
+    // display section
 
+    // create <div> for "current weather" header
+
+    // create <h1> for city name
+
+    // create <h4> for date
+
+    // add elements to header div
+
+    // create <div> for "current weather" info
+
+    // create <p> for temp
+    
+    // create <p> for wind
+
+    // create <p> for humidity
+
+    // create <p> for UV index
+
+    // add elements to "current weather" info <div>
+
+    // add header and info to current weather div
+
+    // run five day forcast
+    displayFiveDay();
 };
 
 function displayWeatherLater() {

@@ -1,11 +1,70 @@
+let key = "7a9e308d5f5da317f65c95353cf68b30"
+let forecast = ('#days');
+let today = moment().format('L');
+
 // Current date from moment js
-var today = moment().format("dddd, MMMM Do, YYYY");
+// let today = moment().format("dddd, MMMM Do, YYYY");
 
 // Variables from HTML elements
-var forcast = document.querySelector('#weather-forcast');
-var currentWeather = document.querySelector('#current-weather');
-var fiveDay = document.querySelector("#five-day-forcast");
-var searchBtn = document.querySelector('#search-btn');
+let forcast = document.querySelector('#weather-forcast');
+let searchInput = document.querySelector(".search-input");
+let currentWeather = document.querySelector('#current-weather');
+let fiveDay = document.querySelector("#five-day-forcast");
+let searchBtn = document.querySelector('#search-btn');
+
+function handleSearch(event) {
+    event.preventDefault();
+    searchInputVal = document.querySelector('.search-input').value;
+
+    if (!searchInputVal) {
+        console.error('No city entered');
+        alert('Please enter a city!');
+        return;
+    } else {
+        localStorage.setItem("City, searchInputVal");
+        let inputCity = localStorage.getItem("City");
+        console.log(inputCity);
+    }
+    displayWeatherNow();
+};
+
+// search button event listener
+searchBtn.addEventListener("click", handleSearch);
+
+// API call
+function getWeather() {
+    let openWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInputVal + '&units=imperial' + "&appid=" + key;
+    console.log(openWeather)
+    $.ajax({
+        'url': openWeather,
+        'method': 'GET',
+    }).then(function (response) {
+
+        let lat = response.coord.lat;
+        let lon = response.coord.lon;
+
+        const image = document.createElement('img');
+        image.src = "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png"
+        $('.selectedCity').append(image);
+
+        console.log(response);
+        console.log(response.name);
+        console.log(response.main.temp);
+        console.log(response.main.humidity);
+        console.log(response.wind.speed);
+        $('#selectedCity').text(response.name + ' ' + today);
+        $('#currentTemp').text('Temperature: ' + response.main.temp + '°F');
+        $('#currentHum').text('Humidity: ' + response.main.humidity + ' %');
+        $('#currentWind').text('Wind: ' + response.wind.speed + ' mph');
+
+        getUvi(lat, lon);
+        getForecast(searchInputVal);
+
+    })
+        .catch(function (err) {
+            console.error(err);
+        });
+}
 
 function displayWeatherNow() {
     // display section
@@ -67,7 +126,7 @@ function displayWeatherNow() {
     displayFiveDay();
 };
 
-function displayWeatherLater() {
+function displayFiveDay() {
     // display section
     fiveDay.style.display = "block";
 

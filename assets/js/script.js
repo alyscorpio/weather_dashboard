@@ -66,6 +66,34 @@ function getWeather() {
         });
 }
 
+function getForcast(searchInputVal) {
+    $.ajax({
+        url: ('https://api.openweathermap.org/data/2.5/forecast?q=' + searchInputVal + '&units=imperial' + '&cnt=5' + '&appid=' + key),
+        method: 'GET',
+    }).then(function (response) {
+        forecast.html(' ');
+        for (let i = 0; i < response.list.length; i++) {
+            let days = response.list[i].dt;
+            let date = moment.unix(days).format("MM/DD/YYYY");
+
+            var weatherIconDisplay = "https://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png";
+
+            forecast.append(`<div class="col-2.5 mx-3">
+            <div class="card" id="five-day-forecast">
+              <div class="card-body">
+                <img src= ${weatherIconDisplay}>
+                <p class="card-text temp">Temp: ${response.list[i].main.temp} °F</p>
+                <p class="card-text wind">Wind: ${response.list[i].wind.speed}mph</p>
+                <p class="card-text humi">Humidity: ${response.list[i].main.humidity}%</p>
+              </div>
+            </div>
+          </div>`)
+        }
+    }).catch(function (err) {
+        console.error(err);
+    });
+}
+
 function displayWeatherNow() {
     // display section
     currentWeather.style.display = 'block';

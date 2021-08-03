@@ -44,6 +44,9 @@ function displayWeatherNow() {
     wind.textContent = "Wind: " + "XX.X" + "MPH"
 
     // create <p> for humidity
+    var humidity = document.createElement('p');
+    humidity.className = "humidity";
+    humidity.textContent = "Humidity: " + "XX" + "%"
 
     // create <p> for UV index
 

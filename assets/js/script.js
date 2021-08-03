@@ -54,6 +54,10 @@ function displayWeatherNow() {
     uv.textContent = "UV Index: " + "XX.X";
 
     // add elements to "current weather" info <div>
+    currentInfo.appendChild(temp);
+    currentInfo.appendChild(wind);
+    currentInfo.appendChild(humidity);
+    currentInfo.appendChild(uv);
 
     // add header and info to current weather div
 

@@ -88,7 +88,7 @@ function displayWeatherLater() {
     // DAY 2
     // new date
     var dateTwo = document.querySelector(".b2-date");
-    dateTwo.textContent = moment().add(1, "d").format("ddd M/DD");
+    dateTwo.textContent = moment().add(2, "d").format("ddd M/DD");
     // temp
     var tempTwo = document.querySelector(".b2-temp");
     tempTwo.textContent = "Temp:  " + "XX" + "°F";
@@ -100,11 +100,46 @@ function displayWeatherLater() {
     humidityTwo.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 3
+    // new date
+    var dateThree = document.querySelector(".b3-date");
+    dateThree.textContent = moment().add(3, "d").format("ddd M/DD");
+    // temp
+    var tempThree = document.querySelector(".b3-temp");
+    tempThree.textContent = "Temp:  " + "XX" + "°F";
+    // wind
+    var windThree = document.querySelector(".b3-wind");
+    windThree.textContent = "Wind:  " + "XX.X" + " MPH";
+    // humidity
+    var humidityThree = document.querySelector(".b3-humid");
+    humidityThree.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 4
+    // new date
+    var dateFour = document.querySelector(".b4-date");
+    dateFour.textContent = moment().add(4, "d").format("ddd M/DD");
+    // temp
+    var tempFour = document.querySelector(".b4-temp");
+    tempFour.textContent = "Temp:  " + "XX" + "°F";
+    // wind
+    var windFour = document.querySelector(".b4-wind");
+    windFour.textContent = "Wind:  " + "XX.X" + " MPH";
+    // humidity
+    var humidityFour = document.querySelector(".b4-humid");
+    humidityFour.textcontent = "Humidity:  " + "XX" + "%";
 
     // DAY 5
-
+    // new date
+    var dateFive = document.querySelector(".b5-date");
+    dateFive.textContent = moment().add(5, "d").format("ddd M/DD");
+    // temp
+    var tempFive = document.querySelector(".b5-temp");
+    tempFive.textContent = "Temp:  " + "XX" + "°F";
+    // wind
+    var windFive = document.querySelector(".b5-wind");
+    windFive.textContent = "Wind:  " + "XX.X" + " MPH";
+    // humidity
+    var humidityFive = document.querySelector(".b5-humid");
+    humidityFive.textcontent = "Humidity:  " + "XX" + "%";
 };
 
 searchBtn.addEventListener("click", displayWeatherNow);

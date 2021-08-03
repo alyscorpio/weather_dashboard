@@ -49,6 +49,9 @@ function displayWeatherNow() {
     humidity.textContent = "Humidity: " + "XX" + "%"
 
     // create <p> for UV index
+    var uv = document.createElement('p');
+    uv.className = "uv";
+    uv.textContent = "UV Index: " + "XX.X";
 
     // add elements to "current weather" info <div>
 
